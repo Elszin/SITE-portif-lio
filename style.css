@@ -1,0 +1,289 @@
+/* Variáveis para cores */
+:root {
+    --vermelho-principal: #e00000;
+    --azul-header: #004d99;
+    --azul-footer: #1c2732;
+    --cor-texto-escuro: #333;
+    --cor-cinza-claro: #f8f8f8;
+}
+
+/* Reset Básico */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-cinza-claro);
+    color: var(--cor-texto-escuro);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ====================================
+   1. HEADER (TOPO)
+   ==================================== */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-top {
+    border-bottom: 1px solid #eee;
+}
+
+.top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--azul-header);
+}
+
+/* Navegação Principal */
+.nav-principal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-principal ul li a {
+    padding: 0 15px;
+    font-weight: bold;
+    color: var(--cor-texto-escuro);
+    transition: color 0.3s;
+}
+
+.nav-principal ul li a:hover {
+    color: var(--vermelho-principal);
+    text-decoration: none;
+}
+
+/* Busca */
+.search-box {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.search-box input {
+    border: none;
+    padding: 8px 10px;
+    outline: none;
+    width: 200px;
+}
+
+.search-box button {
+    background-color: #eee;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: var(--cor-texto-escuro);
+}
+
+/* Faixa de Alerta */
+.alerta-urgente {
+    background-color: var(--vermelho-principal);
+    color: white;
+    padding: 10px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* ====================================
+   2. CONTEÚDO PRINCIPAL (GRID)
+   ==================================== */
+main {
+    padding: 30px 0;
+}
+
+.grid-noticias {
+    display: grid;
+    /* 2 colunas com espaçamento de 30px */
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards Pequenos (Superior) */
+.small-card {
+    padding: 20px;
+}
+
+.small-card h3 {
+    font-size: 1.3em;
+    margin: 10px 0 15px 0;
+    color: var(--cor-texto-escuro);
+}
+
+.small-card p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* Cards Grandes (Inferior) */
+.big-card {
+    grid-column: span 1; /* Ocupa uma coluna */
+}
+
+.card-image {
+    width: 100%;
+    height: 250px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 15px 20px;
+}
+
+.big-card h3 {
+    font-size: 1.4em;
+    margin: 10px 0 10px 0;
+    color: var(--cor-texto-escuro);
+}
+
+/* Tags de Categoria */
+.tag {
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.inflacao { background-color: #ff6347; /* Vermelho-laranja */ }
+.negocios { background-color: #00bcd4; /* Ciano */ }
+.tecnologia { background-color: #4caf50; /* Verde */ }
+.investimentos { background-color: #ffc107; /* Amarelo-dourado */ }
+
+/* Tempo da Notícia */
+.tempo {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #999;
+}
+
+/* ====================================
+   3. FOOTER (RODAPÉ)
+   ==================================== */
+footer {
+    background-color: var(--azul-footer);
+    color: #bbb;
+    padding: 40px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-coluna h4 {
+    color: #fff;
+    font-size: 1.1em;
+    margin-top: 0;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-coluna ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-coluna ul li {
+    margin-bottom: 5px;
+}
+
+.footer-coluna a {
+    color: #bbb;
+    transition: color 0.3s;
+    font-size: 0.9em;
+}
+
+.footer-coluna a:hover {
+    color: white;
+}
+
+/* ====================================
+   4. RESPONSIVIDADE
+   ==================================== */
+@media (max-width: 992px) {
+    .nav-principal {
+        display: none; /* Oculta o menu principal em telas menores */
+    }
+
+    .top-content {
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    .search-box input {
+        width: 150px;
+    }
+    
+    .grid-noticias {
+        grid-template-columns: 1fr; /* Coluna única para todas as notícias */
+        gap: 20px;
+    }
+
+    .card-image {
+        height: 200px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; /* 2 colunas no rodapé em telas menores */
+    }
+}
+
+@media (max-width: 576px) {
+    .top-content {
+        flex-direction: column;
+    }
+    .search-box {
+        margin-top: 10px;
+        width: 100%;
+        max-width: 300px;
+    }
+    .search-box input {
+        width: 100%;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr; /* Coluna única no rodapé em telas muito pequenas */
+    }
+}
